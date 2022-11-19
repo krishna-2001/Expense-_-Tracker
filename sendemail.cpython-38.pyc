@@ -1,0 +1,22 @@
+U
+    !­`h  ã                   @   sT   d dl Z d dlZd dlZd dlmZmZmZm Z  dZe  	dd¡Z
+dd „ Z
+dd	„ ZdS )
+é    N)ÚMailÚEmailÚToÚ Contentzexpense trackerúsmtp.gmail.coméK  c                 C   sN   t dƒ t dd¡}| ¡  | dd¡ d t| ¡}|  d||¡ | ¡  d S ) Nz&sorry we cant process your candidaturer   r    zil.shridhartp24@gmail.comzoms@1RamzSubject: {}
+
+{})	ÚprintÚ smtplibÚSMTPZstarttlsÚloginÚformatÚ SUBJECTÚsendmailÚquit)ÚTEXTÚemailÚsÚ message© r   úCC:\Users\SHRIDHAR TP\Desktop\personal_expense_ttracker\sendemail.pyr      s    r   c           
+      C   sh   t  d¡}tdƒ}t| ƒ}d}td|ƒ}t||||ƒ} |  ¡ }|j jj	j
+|d}	t
+|	jƒ t
+|	j
+ƒ d S )NzESG.qTyQYfaIR9iJPyQczX9EMw.foQ6m09MaLx8BXuB7GnAGt1eN58Tb_SDzj-4ec8xcDozshridhartp24@gmail.comzSending with SendGrid is Funz
+text/plain)Zrequest_body)ÚsendgridZSendGridAPIClientr   r   r   r   ÚgetÚclientÚmailÚsendÚpostr   Ú
+status_codeÚ headers)
+Úuserr   ZsgZ
+from_emailZto_emailÚ subjectÚ contentr   Z	mail_jsonÚresponser   r   r   Úsendgridmail   s    
+
+
+r"   )
+r	   r   ÚosZsendgrid.helpers.mailr   r   r   r   r
+   r
+   r   r   r"   r   r   r   r   Ú<module>   s   
